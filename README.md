@@ -10,4 +10,4 @@
 
 Streamlit을 통해 채팅 내역에서 회의 일시/장소/주제를 도출하는 기능만 구현한 demo버전을 구현해놓았다.
 
-<iframe src=https://gpt2reserve.streamlit.app/?embed_options=light_theme,show_padding width="800" height="600"></iframe>
+[Streamlit site Link](https://gpt2reserve.streamlit.app/)
