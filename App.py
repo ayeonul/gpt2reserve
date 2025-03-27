@@ -61,11 +61,10 @@ if "result" not in st.session_state:
     st.session_state.result = None
 
 
-def add_item():
-    new_item = st.session_state.new_item.strip()
+def add_item(item):
+    new_item = item.strip()
     if new_item and new_item not in st.session_state.meeting_rooms:
         st.session_state.meeting_rooms.append(new_item)
-    st.session_state.new_item = ""  # 입력 필드 초기화
 
 
 def remove_item(item):
@@ -102,10 +101,10 @@ with col1:
             if cols[1].button("삭제", key=f"remove_{item}"):
                 remove_item(item)
 
-    st.text_input("새 회의실 추가", key="new_item", on_change=add_item)
-
-    if st.button("추가"):
-        add_item()
+    new_item = st.text_input("새 회의실 추가(엔터로 추가)")
+    if new_item:
+        add_item(new_item)
+        st.rerun()
 
 
 tools = today = datetime.now().astimezone(kst)
