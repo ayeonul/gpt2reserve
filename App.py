@@ -94,6 +94,10 @@ col1, col2 = st.columns(2, gap="medium")
 
 with col1:
     st.write("#### 1. 회의실 목록 설정")
+    new_item = st.text_input("새 회의실 추가(엔터로 추가)")
+    if new_item:
+        add_item(new_item)
+        
     for item in st.session_state.meeting_rooms:
         cols = st.columns([4, 1])
         cols[0].write(item)
@@ -101,10 +105,7 @@ with col1:
             if cols[1].button("삭제", key=f"remove_{item}"):
                 remove_item(item)
 
-    new_item = st.text_input("새 회의실 추가(엔터로 추가)")
-    if new_item:
-        add_item(new_item)
-        st.rerun()
+    
 
 
 tools = today = datetime.now().astimezone(kst)
