@@ -28,6 +28,9 @@ if "meeting_rooms" not in st.session_state:
         "문화복합콤플렉스",
     ]
 
+if "new_item" not in st.session_state:
+    st.session_state.new_item = ""
+
 if "conv_template" not in st.session_state:
     st.session_state.conv_template = [
         {
@@ -72,7 +75,6 @@ def remove_item(item):
 
 
 def chat_message(speaker, text):
-
     bg_color = "#FFFB81" if speaker == "You" else "#F0F2F6"
     align = "right" if speaker == "You" else "left"
 
