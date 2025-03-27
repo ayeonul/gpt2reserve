@@ -5,9 +5,10 @@ from datetime import datetime
 import pytz
 
 st.write("## 회의실 자동예약 도우미")
+st.write("Streamlit 라이브러리의 특성상 화면이 불안정할 수 있습니다.")
 st.markdown(
     """
-    <div style="margin-bottom: 30px;"></div>
+    <div style="margin-bottom: 50px;"></div>
 """,
     unsafe_allow_html=True,
 )
@@ -101,9 +102,9 @@ with col1:
     for item in st.session_state.meeting_rooms:
         cols = st.columns([4, 1])
         cols[0].write(item)
-        if len(st.session_state.meeting_rooms) > 2:  # 최소 길이 제한
-            if cols[1].button("삭제", key=f"remove_{item}"):
-                remove_item(item)
+        # if len(st.session_state.meeting_rooms) > 2:  # 최소 길이 제한
+        #     if cols[1].button("삭제", key=f"remove_{item}"):
+        #         remove_item(item)
 
     
 
